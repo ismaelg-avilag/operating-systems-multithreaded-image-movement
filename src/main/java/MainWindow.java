@@ -8,7 +8,11 @@ public class MainWindow {
 
     MainWindow()
     {
+        Thread thread1 = new Thread(new ImageMover(labelImage1, 50, 200, 1, 0, 850, 650));
+        Thread thread2 = new Thread(new ImageMover(labelImage2, 50, 200, 0, 1, 850, 650));
 
+        thread1.start();
+        thread2.start();
     }
 
     public static void main(String[] args) {
